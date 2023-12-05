@@ -10,6 +10,9 @@ include_directories(
     ${OpenCV_INCLUDE_DIRS} 
     "/usr/local/include/eigen3/"
 )
+include_directories(
+        ${PROJECT_SOURCE_DIR}/include/
+)
 
 add_executable(opencvtest test.cpp eigenEPNP.cpp)
 target_link_libraries(opencvtest

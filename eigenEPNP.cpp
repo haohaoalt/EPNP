@@ -6,7 +6,7 @@
 COMPLETE BY 
 JIAYAOMA 2019.4.17
 */
-#include "eigenEPNP.h"
+#include "include/eigenEPNP.h"
 #include <gtest/gtest.h>
 
 #include <iostream>
@@ -285,7 +285,8 @@ void EPnPEigen::findBetasApprox3(const Eigen::MatrixXd& L6x10, const Eigen::Vect
   //B1 = sqrt（B11）
   //B2 = sqrt（B33）
   //B3 = B13/B11
-    betas[1] = (b5[2] > 0) ? sqrt(b5[2]) : 0.0;
+  //hayden: 注释了下面这行编译成功
+    // betas[1] = (b5[2] > 0) ? sqrt(b5[2]) : 0.0;
   if (B(0) < 0) {
     betas[0] = sqrt(-B(0));
     betas[1] = (B(2)<0)?sqrt(-(B(2))):0.0;
